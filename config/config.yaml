@@ -1,0 +1,57 @@
+dataset:
+  sim_root_dir: ['/data/sim_data',]
+  real_root_dir: ['/data/real_world']
+  vis_dir: /data/vis
+  train_dir: 'train'
+  val_dir: 'val'
+  trainwxs_dir: 'wxs_train'
+  topo_dir: 'landfire'
+  vege_dir: 'landfire'
+  fuel_dir: 'landfire'
+  sate_dir: 'train'
+  valwxs_dir: 'wxs_val'
+  test_dir: 'test'
+  testwxs_dir: 'wxs_test'
+  test_landfire: 'carr_landfire'
+  input_length: 3
+  img_size: [256, 256]
+  reverse: True
+  vege_classes: [9, 20, 12, 11, 4]
+  fuel_classes: [21]
+  num_classes: 2
+  num_workers: 4
+
+FireTr:
+  input_length: 3
+  img_size: [256, 256]
+  Encoder:
+    hidden_dim: 96
+    downscaling_factors: [4, 2, 2]
+    layers: [2, 2, 2]
+    heads: [3, 6, 12]
+    head_dim: 32
+    window_size: 8
+    relative_pos_embedding: True
+    modal_channel: 36
+  Spatial:
+    embed_dim: 384
+    num_heads: 4
+    hidden_dim: 512
+  Temporal:
+    embed_dim: 384
+    num_heads: 4
+    hidden_dim: 512
+  Time:
+    embed_dim: 384
+    num_heads: 4
+    hidden_dim: 512
+
+training:
+  batch_size: 8
+  learning_rate: 0.0001
+  epochs: 10
+
+checkpoint:
+  checkpoint: False
+  checkpoint_path: '/best_iou.pth'
+  model_save_path: '/models/backtrack'

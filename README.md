@@ -15,7 +15,7 @@ We create a brand-new **Sim2Real-Fire Dataset** dataset contains wildﬁre simul
 
 We provide a **mini-version** of the dataset in [Sim2Real-Fire](https://1drv.ms/f/s!AhX2uIQNmngrafE5KFjNyZym_7o?e=yo3Q1K)
 
-Here, we present some examples of satellite images with the real fire areas. The complete collection is available in the "1.5_Satellite_Images/original_images" directory. 
+Here, we present some examples of satellite images with the real fire areas. The complete collection is available in the directory 1.5_Satellite_Images/original_images. 
 
 
 <p align="center">
